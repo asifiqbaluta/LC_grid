@@ -110,7 +110,7 @@ for enn_l in range(1):
                 input("Press to exit:")
                 break
             pygame.display.flip()
-        plt.savefig('output/plots/im_'+str(m)+'.jpg')
+        #plt.savefig('output/plots/im_'+str(m)+'.jpg')
 
     # for i in range(5000):
 #         #im = env.get_env_with_path(res)[:,:,0]
