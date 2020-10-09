@@ -43,7 +43,7 @@
 import numpy as np 
 
 
-def read_and_create(input_file):
+def read_and_create_grid(input_file):
     if type(input_file)!=type(''):
         print("invalid input")
         return
@@ -62,7 +62,7 @@ def read_and_create(input_file):
             for j in np.arange(int(temp_line[3]),int(temp_line[4])+1):                
                 out[int(temp_line[1]):int(temp_line[2])+1,j] = 1
 
-        elif temp_line[0] == 'O':
+        elif temp_line[0] == 'O':           
             for j in np.arange(int(temp_line[3]),int(temp_line[4])+1):
                 out[int(temp_line[1]):int(temp_line[2])+1,j] = int(temp_line[5])
 
@@ -73,7 +73,7 @@ def read_and_create(input_file):
 
 
 
-a = read_and_create("grid.txt")
+a = read_and_create_grid("grid.txt")
 
 print(a.shape)
 #

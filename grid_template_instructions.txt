@@ -1,0 +1,10 @@
+grid_size_x grid_size_y
+
+for Walls:
+W start_x end_x start_y end_y
+
+for Objects:
+O start_x end_x start_y end_y object_id
+
+for agent:
+A X Y
