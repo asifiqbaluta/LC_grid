@@ -1,4 +1,4 @@
-from LC_GRID_fixed import *
+from LC_GRID import *
 import sys
 from PIL import Image
 import pygame
@@ -21,7 +21,7 @@ done = False
 #action_list = ['up','down','left','right','no action']
 direction_list = ['up','down','left','right']
 action_list = ['NL','LC'] #['no action','loop closure']
-env = gameEnv(size=10,_lc_count=5,_wall_count=5,_seed_id=11)#,res=12)
+env = gameEnv(input_file='grid.txt',_seed_id=11)#,res=12)
 cm=0
 m = 0
 m_count = 20
@@ -41,7 +41,7 @@ for enn_l in range(1):
     total_step = 0 
     lc_step = 0
     seed = np.random.random()
-    print(int(seed*1000))
+#    print(int(seed*1000))
     env.seed(int(seed*1000)+1)
     # print(env.objects[1].intensity)
     # for l in range(200):
@@ -94,7 +94,7 @@ for enn_l in range(1):
             ax1.imshow(im) #[:,:,0],cmap='gray')
             ax2.imshow(im_step) #[:,:,0],cmap = 'gray')
             ax2.set_title([reward,total_reward])
-            ax1.set_title([env.objects[0].x-1, env.objects[0].y-1])
+            ax1.set_title([env.hero_[0]-1, env.hero_[0]-1])
             # im = Image.fromarray(im_step)
             # im.save("output/step/"+str(m)+"_step.png")
             # im = Image.fromarray(env.get_env_with_path())
@@ -110,7 +110,7 @@ for enn_l in range(1):
                 input("Press to exit:")
                 break
             pygame.display.flip()
-        #plt.savefig('output/plots/im_'+str(m)+'.jpg')
+#        plt.savefig('output/plots/im_'+str(m)+'.jpg')
 
     # for i in range(5000):
 #         #im = env.get_env_with_path(res)[:,:,0]
@@ -147,7 +147,7 @@ for enn_l in range(1):
 #             if input_ == '5':
 #                 for l in range(50):
 #                     _, reward, done, direction, m_count,_ = env.step(action,cm,m_count)
-#                     im_step = env.get_screen(direction,res)[:,:,0]
+#                     im_step = env.get_screen(direction,res)[:,:,0].
 #                     im = env.get_env_with_path(res)[:,:,0]
 #                     ax1.imshow(im,cmap='gray')
 #                     ax2.imshow(im_step,cmap = 'gray')
